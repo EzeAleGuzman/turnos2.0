@@ -1,7 +1,7 @@
 var header = `
 <nav class="nav" id="nav">
 <a class="logo" href="#">
-  <img src="img/Logo/logo ajustado.png" alt="Logo hospital">
+<img src="../static/img/logo ajustado.png" alt="Logo hospital">
 </a>
 <div class="mobile-menu-button">
   <svg class="h-8 w-8" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
@@ -50,7 +50,7 @@ var header = `
 </a>
 </div>
 <div class="contenedor-imagenhospi">
-<img class="imagenhospi" src="img/img_index/hospital4.jpg" alt="" />
+<img class="imagenhospi" src="../static/img/hospital4.jpg" alt="" />
 </div>
 `
 document.querySelector('header').innerHTML = header

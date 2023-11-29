@@ -1,21 +1,25 @@
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
-    
+
 
 
     <hr>
     <div class="flex justify-center w-full p-20">
-    <div class=" w-80">
-    <form action="{% url 'crear_turno' %}" method='POST'>
-        {% csrf_token %}
-        {{ form }}
-        <input class="mt-4 px-4 py-2 bg-teal-exact hover:bg-fuchsia-700 text-white rounded" type='submit' value='Crear Paciente' >
-    </form>
-</div>
+        <div class=" w-80">
+            <form action="{% url 'crear_turno' %}" method='POST'>
+                {% csrf_token %}
+                {{ form }}
+                <input class="primary" type='submit' value='Crear turno'>
+            </form>
+        </div>
+    </div>
 </body>
+
 </html>

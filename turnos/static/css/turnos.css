@@ -1,0 +1,781 @@
+/* font-family: 'Merriweather', serif;-----Fuente para titulos y subtitulos*/
+/* font-family: 'Open Sans', sans-serif;-----Fuente para párrafos */
+.colores {
+    color: #F2F2F2;
+    color: #152C40;
+    color: #04BFBF;
+    color: #03ADC6;
+}
+
+
+body {
+    margin-right: 10px;
+    margin: 0%;
+    /*le agregué para que quede al borde y no se vean espacios en blanco en el footer. -Dani*/
+    background-color: #f2f2f2;
+    font-family: 'Merriweather', serif;
+    align-items: center;
+}
+
+/* Estilos para la barra de navegación principal */
+h1,
+h2 {
+    font-size: 1.7em;
+    color: #152C40;
+}
+
+h3 {
+    font-size: 1em;
+    color: #152C40;
+}
+
+p {
+    font-family: 'Open Sans', sans-serif;
+}
+
+a {
+    text-decoration: none;
+    color: #152C40;
+}
+
+hr {
+    border: 1px solid #04BFBF;
+}
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+    margin: 5px;
+    font-family: 'Merriweather', serif;
+    width: 90%;
+}
+
+.nav a .logo {
+    font-size: 4rem;
+    font-weight: bold;
+    line-height: 1;
+    text-decoration: none;
+}
+
+.nav img {
+    width: 40%;
+}
+
+.nav .mobile-menu-button {
+    display: flex;
+    align-items: center;
+    color: rgba(3, 173, 198);
+    cursor: pointer;
+    display: none;
+    padding: 2px;
+    /* border: 4px solid #03ADC6; */
+    border-radius: 5px;
+}
+
+.nav .mobile-menu-button svg {
+    height: 3rem;
+    width: 4rem;
+    fill: currentColor;
+}
+
+.nav ul {
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav ul li {
+    margin: 1rem;
+    display: flex;
+}
+
+.nav ul li:last-child {
+    margin-bottom: 0;
+}
+
+.nav ul li a {
+    font-size: 0.9rem;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: bold;
+    color: #152C40;
+    text-decoration: none;
+    transition: color 0.3s;
+    /* estilo para subrayado animado */
+    position: relative;
+}
+
+/* Estilo para subrayado animado */
+.nav ul li a:after {
+    content: "";
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    height: 2px;
+    width: 100%;
+    background: #03ADC6;
+    transform-origin: right;
+    transform: scalex(0);
+    transition: transform 0.5s ease-in-out;
+}
+
+.nav ul li a:hover:after {
+    transform-origin: left;
+    transform: scaleX(1);
+}
+
+/* Agregado margin boton al enlace de intranet por algun motivo no quedaba alineado el subrayado animado */
+.nav ul li .intranet {
+    margin-bottom: 1rem;
+}
+
+.nav ul li a:hover {
+    color: #03ADC6;
+}
+
+/* Estilos para el menú desplegable */
+.dropdown {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 60%;
+    max-width: 15rem;
+    padding: 1rem;
+    background-color: rgb(3, 173, 198);
+    border-right: 1px solid #ccc;
+    overflow-y: auto;
+    z-index: 50;
+    transform: translateX(-100%);
+    transition: transform 0.3s;
+
+}
+
+.dropdown hr {
+    margin: 0.5rem 0;
+    border: none;
+    border-top: 1px solid #ccc;
+}
+
+.dropdown ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.dropdown ul li {
+    margin-bottom: 1rem;
+}
+
+.dropdown ul li:last-child {
+    margin-bottom: 0;
+}
+
+.dropdown ul li a {
+    display: block;
+    padding: 1rem;
+    font-size: 1rem;
+    font-weight: bold;
+    color: black;
+    text-decoration: none;
+    border-radius: 0.25rem;
+    transition: color 0.3s;
+}
+
+.dropdown ul li a:hover {
+    color: white;
+}
+
+/* Estilos para el botón de cierre del menú desplegable */
+.close-button {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.close-button svg {
+    height: 1.5rem;
+    width: 1.5rem;
+    fill: black;
+    transition: fill 0.3s;
+}
+
+.close-button svg:hover {
+    fill: #03ADC6;
+    ;
+}
+
+/* Estilos para el fondo del menú desplegable */
+.dropdown-backdrop {
+    position: fixed;
+    inset: 0;
+    background-color: #F2F2F2;
+    opacity: 0;
+    pointer-events: none;
+    z-index: 49;
+    transition: opacity 0.3s;
+}
+
+/* Estilos para el botón de cierre de sesión y el texto de derechos de autor */
+.button-container {
+    padding-top: 1.5rem;
+}
+
+.copyright-text {
+    margin-top: 1rem;
+    font-size: 0.75rem;
+    text-align: center;
+    color: black;
+}
+
+.titulo {
+    display: flex;
+    justify-content: center;
+    /* Centra horizontalmente el contenido dentro del elemento */
+    align-items: center;
+    /* Centra verticalmente el contenido dentro del elemento */
+    text-align: center;
+    /* Centra el texto horizontalmente (opcional) */
+    width: 100%;
+    background-color: #03ADC6;
+    border-radius: 15px 15px 0 0;
+    color: white;
+    text-shadow: 0 0 10px #fff8;
+}
+
+/*.titulo:hover {}*/
+
+.titulo2 {
+    margin-left: 25%;
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    width: 50%;
+    border-radius: 15px;
+}
+
+.titulo .titulo-pag {
+    margin: 0;
+    padding: 0;
+    max-width: 90%;
+    text-decoration: none;
+    text-shadow: 0 0 10px #fff8;
+}
+
+.contenedor-imagenhospi {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    max-width: 100%;
+    margin-bottom: 1rem;
+}
+
+.imagenhospi {
+    max-width: 100%;
+    height: auto;
+}
+
+/******** ESTILOS DEL MAIN *******/
+
+/* seccion valores */
+
+.contenido {
+    max-width: 1000px;
+    /* width: 90%; */
+    margin: 2em auto;
+    gap: 1.6em;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+}
+
+.contenido>* {
+    text-align: center;
+}
+
+.section_valores {
+    grid-column: 1 / span 5;
+    display: flex;
+    /* gap: 1em; */
+    padding-top: 2em;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.section_valores .val_item {
+    width: 20%;
+
+}
+
+.section_valores .val_item img {
+    width: 50%;
+    border-radius: 50%;
+    background-color: #e6f8f8;
+    border: 4px solid #dbe6e6;
+
+}
+
+.section_valores .val_item img:hover {
+    width: 54%;
+    cursor: pointer;
+    border: 4px solid #e3eaea;
+    background-color: #e3eaea;
+}
+
+.section_valores .val_item h2 {
+    font-size: 0.8em;
+    text-align: center;
+    color: #152C40;
+    text-transform: uppercase;
+}
+
+/* sección institucional y noticias */
+
+.section_noticias {
+    grid-area: section_noticias;
+}
+
+.section_inst {
+    grid-area: section_inst;
+}
+
+.contenido_2 {
+    max-width: 1400px;
+    width: 85%;
+    margin: 2em auto;
+    gap: 1.6em;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-areas: "section_inst          section_inst       section_inst"
+        "section_noticias      section_noticias   section_noticias"
+
+
+}
+
+.contenido_2 .section_inst {
+    grid-column-start: section_inst;
+    grid-column-end: section_inst;
+}
+
+.somos {
+    margin-top: 1em;
+    text-align: center;
+    padding: 4em;
+}
+
+.objetivo {
+    text-align: center;
+    padding: 4em 4em 4em 4em;
+}
+
+.inst_img {
+    display: flex;
+}
+
+.inst_img_item {
+    width: 50%;
+    margin: 1em;
+}
+
+.inst_img_item img {
+    width: 100%;
+    border-radius: 3%;
+}
+
+/* SECCION NOTICIAS */
+
+.section_noticias {
+    padding: 4em 0 4em 0;
+}
+
+.section_noticias h2 {
+    text-align: center;
+}
+
+/* Gris area de cada caja de noticias */
+.noticia1 {
+    grid-area: noticia1;
+}
+
+.noticia2 {
+    grid-area: noticia2;
+}
+
+.noticia3 {
+    grid-area: noticia3;
+}
+
+.noticia4 {
+    grid-area: noticia4;
+}
+
+.noticia5 {
+    grid-area: noticia5;
+}
+
+.noticia6 {
+    grid-area: noticia6;
+}
+
+/* contenedor padre de las noticias */
+.not_item {
+    display: grid;
+    grid-template-areas: "noticia1    noticia2  noticia3"
+        "noticia4      noticia5    noticia6";
+
+    grid-gap: 1.6em;
+    gap: 1.6em;
+    padding: 2em 0 2em 0;
+}
+
+/* estilo de las cajas de noticias */
+.noticia1,
+.noticia2,
+.noticia3,
+.noticia4,
+.noticia5,
+.noticia6 {
+    background-color: #e6f8f8;
+    border-radius: 5%;
+    border: 0.4em solid #eaebec;
+}
+
+/* estilos hover de las cajas de noticias/--los tuve que hacer por separado porque no me 
+funcionaba aplicando el estilo a todas juntas */
+.noticia1:hover {
+    border: 6px solid #04BFBF;
+    transition: 3s;
+}
+
+.noticia2:hover {
+    border: 6px solid #04BFBF;
+    transition: 3s;
+}
+
+.noticia3:hover {
+    border: 6px solid #04BFBF;
+    transition: 3s;
+}
+
+.noticia4:hover {
+    border: 6px solid #04BFBF;
+    transition: 3s;
+}
+
+.noticia5:hover {
+    border: 6px solid #04BFBF;
+    transition: 3s;
+}
+
+.noticia6:hover {
+    border: 6px solid #04BFBF;
+    transition: 3s;
+}
+
+.not_item img {
+    width: 100%;
+    border-radius: 5%;
+
+}
+
+/* estilos de los subtitulos y las p de las noticias */
+.not_item h3,
+.not_item p {
+    padding: 0.8em;
+    margin: 0;
+    color: #111c39;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.not_item p {
+    font-size: 0.8em;
+}
+
+.not_item .verMas {
+    color: black;
+    font-weight: bold;
+}
+
+
+
+
+
+
+
+/********* ESTILOS DEL FOOTER - COPIAR A PARTIR DE AQUÍ *************/
+/* grid area del footer-columnas */
+.pie_pag-col1 {
+    grid-area: pie_pag-col1;
+    padding-left: 4em;
+}
+
+.pie_pag-col2 {
+    grid-area: pie_pag-col2;
+
+}
+
+.pie_pag-col3 {
+    grid-area: pie_pag-col3;
+}
+
+.pie_pag-col4 {
+    grid-area: pie_pag-col4;
+    margin-right: 5em;
+}
+
+.footer {
+    background-color: #03adc6;
+    padding: 2em 0 3em 0;
+    display: grid;
+    padding: 2em auto;
+    gap: 1.6em;
+    grid-template-areas: "pie_pag-col1   pie_pag-col2   pie_pag-col3    pie_pag-col4";
+}
+
+footer p {
+    margin: 0px;
+    font-family: 'Open Sans', sans-serif;
+    color: #0b1721;
+    font-size: 0.9em;
+}
+.contacto {
+    margin-top: 2em;
+}
+.footer ul,
+.footer a h5,
+.pie_pag-col2 a {
+    list-style: none;
+    padding-left: 0%;
+    margin: 0%;
+    font-family: 'Open Sans', sans-serif;
+    color: #0b1721;
+    font-size: 0.9em;
+    margin-top: 0.6em;
+    font-weight: lighter;
+}
+
+footer h4 {
+
+    color: #0b1721;
+    font-size: 1em;
+    font-family: 'Merriweather', serif;
+    text-decoration: underline;
+}
+
+.footer a:hover{
+    color: #dbe6e6;
+}
+
+.footer a h5:hover{
+    color: #dbe6e6;
+}
+
+.pie_pag-col2 a,
+.pie_pag-col2 li {
+
+    margin-bottom: 0.5em;
+}
+
+/* estilos de registrase */
+.registrarse h4 {
+    margin-bottom: 1em;
+    background-color: transparent;
+    color: #e6f8f8;
+    text-decoration: none;
+    
+}
+
+.registrarse input {
+    background-color: #e6f8f8;
+    margin-bottom: 1em;
+
+}
+
+
+.registrarse button {
+    border: 2px solid rgb(24, 24, 24);
+    border-radius: 5px;
+    background-color: #e6f8f8;
+    font-size: 0.7em;
+    cursor: pointer;
+    padding: 1em;
+    
+
+}
+
+.registrarse button:hover{
+    font-size: 0.8em;
+    
+    background-color: #e6f8f8;
+   
+    
+}
+
+.suscripcion {
+    border-radius: 5px;
+    padding: 10px;
+    border: 2px solid rgb(15, 15, 15);
+}
+
+.suscripcion::placeholder {
+    color: black;
+}
+
+/* Estilos Redes sociales */
+.redes_container{
+    display: flex;
+}
+.redes_item{
+    width: 25%;
+}
+
+
+/* ESTILOS PANTALLAS PEQUEÑAS */
+@media screen and (max-width: 768px) {
+
+    .nav ul li {
+        display: none;
+    }
+
+    .nav ul {
+        flex-direction: row;
+        /* Vuelve a la disposición en fila */
+        justify-content: space-between;
+        /* Espaciado en torno a los elementos */
+        align-items: center;
+        background-color: #03acc660;
+        /* Centra los elementos en pantallas pequeñas */
+    }
+
+    .nav ul li {
+        margin-bottom: 0;
+        margin-right: 1rem;
+    }
+
+    .nav ul li:last-child {
+        margin-right: 0;
+    }
+
+    .nav .mobile-menu-button {
+        display: flex;
+        align-items: end;
+        /* Muestra el botón de menú móvil en pantallas pequeñas */
+    }
+
+    .dropdown {
+        width: 100%;
+        /* Ocupa todo el ancho en pantallas pequeñas */
+        max-width: none;
+    }
+
+    .titulo .titulo-pag {
+        font-size: 0.6rem;
+        background-color: #03ADC6;
+    }
+
+    /* seccion valores */
+    .section_valores {
+        padding-top: 0.4em;
+    }
+
+    .section_valores .val_item img {
+        width: 67%;
+    }
+
+    .section_valores .val_item img:hover {
+        width: 69%;
+    }
+
+    .section_valores .val_item h2 {
+        font-size: 12px;
+        text-transform: lowercase;
+    }
+
+    /* seccion institucional */
+    .somos {
+        padding: 0;
+        margin: 0;
+    }
+
+    .objetivo {
+        padding: 0 0 4em 0;
+        margin: 0;
+    }
+
+    .section_inst p {
+        font-size: 0.8em;
+        padding-left: 1em;
+        padding-right: 1em;
+    }
+
+    .inst_img {
+        margin-top: 8em;
+        display: block;
+        margin: 1em;
+        align-content: center;
+    }
+
+    .inst_img_item {
+        width: 100%;
+        margin: 2em 0 0 0;
+    }
+
+    /* seccion noticias */
+
+    .section_noticias {
+        padding-top: 0;
+    }
+
+    .not_item {
+        grid-template-areas: "noticia1 noticia1 noticia1"
+            "noticia2 noticia2 noticia2"
+            "noticia3 noticia3 noticia3"
+            "noticia4 noticia4 noticia4"
+            "noticia5 noticia5 noticia5"
+            "noticia6 noticia6 noticia6";
+    }
+
+    .not_item .noticia1 img {
+        margin-top: 0;
+    }
+
+    /* footer */
+    .footer {
+        padding-left: 3em;
+        grid-template-areas: "pie_pag-col1  pie_pag-col1   pie_pag-col2     pie_pag-col2"
+            "pie_pag-col3   pie_pag-col3    pie_pag-col4    pie_pag-col4";
+    }
+
+    .pie_pag-col1 {
+        padding-left: 0;
+    }
+
+    .pie_pag-col4 {
+        margin-right: 0;
+    }
+
+    .pie_pag-col2,
+    .pie_pag-col4 {
+        margin-right: 3em;
+    }
+
+    .pie_pag-col4 .registrarse input {
+        width: 100px;
+    }
+
+
+
+
+
+
+
+
+
+
+}
+
+/* Pendientes:
+1. 

@@ -20,7 +20,7 @@ body {
 h1,
 h2 {
     font-size: 1.7em;
-    color: #0a5ca3;
+    color: #152C40;
 }
 
 h3 {
@@ -272,7 +272,9 @@ hr {
 
 .titulo-pag h1{
     font-family: 'Merriweather', serif;
-    color: white;
+    color: #152C40;
+    padding-top: 0.5em;
+    font-weight: bold;
 }
 
 .contenedor-imagenhospi {
@@ -291,7 +293,14 @@ hr {
 
 /******** ESTILOS DEL MAIN *******/
 
-
+.contenedor{
+    margin-top: 2em;
+}
+.boton_CT{
+    margin-left: 2em;
+    background-color: #152C40;
+    border-color: #152C40;
+}
 
 
 

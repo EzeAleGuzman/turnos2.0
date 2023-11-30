@@ -7,12 +7,11 @@
     color: #03ADC6;
 }
 
-
 body {
     margin-right: 10px;
     margin: 0%;
     /*le agregué para que quede al borde y no se vean espacios en blanco en el footer. -Dani*/
-    background-color: #f2f2f2;
+    background-color: #f4eded;
     font-family: 'Merriweather', serif;
     align-items: center;
 }
@@ -21,7 +20,7 @@ body {
 h1,
 h2 {
     font-size: 1.7em;
-    color: #152C40;
+    color: #0a5ca3;
 }
 
 h3 {
@@ -38,29 +37,34 @@ a {
     color: #152C40;
 }
 
+.logo-img img{
+    width: 40%;
+    padding-top: 2em;
+}
+
 hr {
     border: 1px solid #04BFBF;
 }
+
 
 .nav {
     display: flex;
     justify-content: space-between;
     padding: 1rem;
     margin: 5px;
+    padding-top: 3em;
     font-family: 'Merriweather', serif;
     width: 90%;
 }
 
-.nav a .logo {
+.nav a{
     font-size: 4rem;
     font-weight: bold;
     line-height: 1;
     text-decoration: none;
 }
 
-.nav img {
-    width: 40%;
-}
+
 
 .nav .mobile-menu-button {
     display: flex;
@@ -234,6 +238,7 @@ hr {
 .titulo {
     display: flex;
     justify-content: center;
+    margin-top: 2em;
     /* Centra horizontalmente el contenido dentro del elemento */
     align-items: center;
     /* Centra verticalmente el contenido dentro del elemento */
@@ -259,10 +264,15 @@ hr {
 
 .titulo .titulo-pag {
     margin: 0;
-    padding: 0;
+    padding: 1em;
     max-width: 90%;
     text-decoration: none;
     text-shadow: 0 0 10px #fff8;
+}
+
+.titulo-pag h1{
+    font-family: 'Merriweather', serif;
+    color: white;
 }
 
 .contenedor-imagenhospi {
@@ -281,223 +291,7 @@ hr {
 
 /******** ESTILOS DEL MAIN *******/
 
-/* seccion valores */
 
-.contenido {
-    max-width: 1000px;
-    /* width: 90%; */
-    margin: 2em auto;
-    gap: 1.6em;
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-}
-
-.contenido>* {
-    text-align: center;
-}
-
-.section_valores {
-    grid-column: 1 / span 5;
-    display: flex;
-    /* gap: 1em; */
-    padding-top: 2em;
-    flex-wrap: wrap;
-    justify-content: space-around;
-}
-
-.section_valores .val_item {
-    width: 20%;
-
-}
-
-.section_valores .val_item img {
-    width: 50%;
-    border-radius: 50%;
-    background-color: #e6f8f8;
-    border: 4px solid #dbe6e6;
-
-}
-
-.section_valores .val_item img:hover {
-    width: 54%;
-    cursor: pointer;
-    border: 4px solid #e3eaea;
-    background-color: #e3eaea;
-}
-
-.section_valores .val_item h2 {
-    font-size: 0.8em;
-    text-align: center;
-    color: #152C40;
-    text-transform: uppercase;
-}
-
-/* sección institucional y noticias */
-
-.section_noticias {
-    grid-area: section_noticias;
-}
-
-.section_inst {
-    grid-area: section_inst;
-}
-
-.contenido_2 {
-    max-width: 1400px;
-    width: 85%;
-    margin: 2em auto;
-    gap: 1.6em;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-areas: "section_inst          section_inst       section_inst"
-        "section_noticias      section_noticias   section_noticias"
-
-
-}
-
-.contenido_2 .section_inst {
-    grid-column-start: section_inst;
-    grid-column-end: section_inst;
-}
-
-.somos {
-    margin-top: 1em;
-    text-align: center;
-    padding: 4em;
-}
-
-.objetivo {
-    text-align: center;
-    padding: 4em 4em 4em 4em;
-}
-
-.inst_img {
-    display: flex;
-}
-
-.inst_img_item {
-    width: 50%;
-    margin: 1em;
-}
-
-.inst_img_item img {
-    width: 100%;
-    border-radius: 3%;
-}
-
-/* SECCION NOTICIAS */
-
-.section_noticias {
-    padding: 4em 0 4em 0;
-}
-
-.section_noticias h2 {
-    text-align: center;
-}
-
-/* Gris area de cada caja de noticias */
-.noticia1 {
-    grid-area: noticia1;
-}
-
-.noticia2 {
-    grid-area: noticia2;
-}
-
-.noticia3 {
-    grid-area: noticia3;
-}
-
-.noticia4 {
-    grid-area: noticia4;
-}
-
-.noticia5 {
-    grid-area: noticia5;
-}
-
-.noticia6 {
-    grid-area: noticia6;
-}
-
-/* contenedor padre de las noticias */
-.not_item {
-    display: grid;
-    grid-template-areas: "noticia1    noticia2  noticia3"
-        "noticia4      noticia5    noticia6";
-
-    grid-gap: 1.6em;
-    gap: 1.6em;
-    padding: 2em 0 2em 0;
-}
-
-/* estilo de las cajas de noticias */
-.noticia1,
-.noticia2,
-.noticia3,
-.noticia4,
-.noticia5,
-.noticia6 {
-    background-color: #e6f8f8;
-    border-radius: 5%;
-    border: 0.4em solid #eaebec;
-}
-
-/* estilos hover de las cajas de noticias/--los tuve que hacer por separado porque no me 
-funcionaba aplicando el estilo a todas juntas */
-.noticia1:hover {
-    border: 6px solid #04BFBF;
-    transition: 3s;
-}
-
-.noticia2:hover {
-    border: 6px solid #04BFBF;
-    transition: 3s;
-}
-
-.noticia3:hover {
-    border: 6px solid #04BFBF;
-    transition: 3s;
-}
-
-.noticia4:hover {
-    border: 6px solid #04BFBF;
-    transition: 3s;
-}
-
-.noticia5:hover {
-    border: 6px solid #04BFBF;
-    transition: 3s;
-}
-
-.noticia6:hover {
-    border: 6px solid #04BFBF;
-    transition: 3s;
-}
-
-.not_item img {
-    width: 100%;
-    border-radius: 5%;
-
-}
-
-/* estilos de los subtitulos y las p de las noticias */
-.not_item h3,
-.not_item p {
-    padding: 0.8em;
-    margin: 0;
-    color: #111c39;
-    font-family: 'Open Sans', sans-serif;
-}
-
-.not_item p {
-    font-size: 0.8em;
-}
-
-.not_item .verMas {
-    color: black;
-    font-weight: bold;
-}
 
 
 

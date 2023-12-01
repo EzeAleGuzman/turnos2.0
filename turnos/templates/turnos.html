@@ -175,14 +175,14 @@
             <tbody>
               <tr>
                 <td>
-                  <p> {{ turno.nombre }} {{ turno.apellido }}</p>
+                  <p> {{ turno.nombre|title }} {{ turno.apellido|title }}</p>
                   <p> </p>
                 </td>
                 <td>
                   <p> {{ turno.dni }}</p>
                 </td>
                 <td>
-                  <p> {{ turno.medico }}</p>
+                  <p> {{ turno.medico|title }}</p>
                 </td>
                 <td>
                   <p>{{ turno.fecha }}</p>

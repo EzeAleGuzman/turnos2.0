@@ -1,3 +1,4 @@
+{% load crispy_forms_tags %}
 <html lang="en">
 
 <head>
@@ -13,10 +14,10 @@
     <hr>
     <div class="flex justify-center w-full p-20">
         <div class=" w-80">
-            <form action="{% url 'crear_turno' %}" method='POST'>
+            <form  method='post'>
                 {% csrf_token %}
-                {{ form }}
-                <input class="primary" type='submit' value='Crear turno'>
+                {{ form.as_p }}
+               <button class="btn btn-primary" type="submit"Guardar></button>
             </form>
         </div>
     </div>

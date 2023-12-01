@@ -298,10 +298,14 @@ hr {
 }
 .boton_CT{
     margin-left: 2em;
-    background-color: #152C40;
-    border-color: #152C40;
+    background-color: #03ADC6;
+    border-color: #03ADC6;
 }
 
+.boton_CT:hover {
+    background-color: #0aa6be;
+    border-color: #03ADC6;
+}
 
 
 

@@ -17,7 +17,8 @@ class Turno(models.Model):
     apellido = models.CharField( max_length=50, null=True)
     dni = models.IntegerField(default=0)
     medico = models.ForeignKey(Medico, on_delete=models.CASCADE)
-    horario = models.DateTimeField()
+    fecha = models.DateField(default='2023-01-01')
+    hora = models.TimeField(default='00:00')
     
 
     def __str__(self):

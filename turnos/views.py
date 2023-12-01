@@ -18,7 +18,7 @@ def ver_medicos(request):
 
 @login_required
 def ver_turnos(request):
-    turnos = Turno.objects.all().order_by('horario')
+    turnos = Turno.objects.all().order_by('fecha')
     
     if request.method == 'POST':
         form = TurnoForm(request.POST)

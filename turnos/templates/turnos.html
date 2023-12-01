@@ -31,7 +31,7 @@
           <!-- 1ra columna del NAV (logo) -->
           <div class="col-6">
             <a class="logo-img" src="#">
-              <img src="../static/componentes/img/logo_ajustado.png" alt="Logo hospital">
+              <img src="../static/componentes/img/logo ajustado.png" alt="Logo hospital">
             </a>
           </div>
           <!-- 2da columna del NAV (navegacion) -->
@@ -103,7 +103,9 @@
         </div>
         <!-- Columna 2 Saludo -->
         <div class="col-3">
-
+          <td>
+            <p>Bienvenido {{ user.username }}</p>
+          </td>
         </div>
         <!-- Columna 3 Botón y modal CREAR TURNO-->
         <div class="col-2">
@@ -124,16 +126,15 @@
                   <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                  <!-- <div class="flex justify-center w-full p-20">
-              <div class=" w-80"> -->
+                  
                   <form action="{% url 'ver_turnos' %}" method='POST'>
                     {% csrf_token %}
                     {{ form|crispy}}
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                     <input class="btn btn-primary boton_CT" type='submit' value='Crear turno'>
                   </form>
-                  <!-- </div>
-            </div> ... -->
+                  
+            
                 </div>
                 <div class="modal-footer">
                 </div>
@@ -163,8 +164,11 @@
                 <th>Nombre y apellido</th>
                 <th>DNI</th>
                 <th>Médico</th>
-                <th>Fecha y hora</th>
+                <th>Fecha</th>
+                <th>Hora</th>
+                {% if  pertenece_admin %}
                 <th>Acciones</th>
+                {% endif %}
               </tr>
             </thead>
             {% for turno in turnos %}
@@ -181,18 +185,22 @@
                   <p> {{ turno.medico }}</p>
                 </td>
                 <td>
-                  <p>{{ turno.horario }}</p>
+                  <p>{{ turno.fecha }}</p>
                 </td>
                 <td>
+                  <p>{{ turno.hora }}</p>
+                </td>
+                {% if  pertenece_admin %}
+                <td class= "d-flex">
                   <a class='btn btn-warning' href="{% url 'editar_turno' turno.id %}">Editar</a>
-                  <td>
+                  
                     <form method="post" action="{% url 'borrar_turno' turno.id %}">
                       {% csrf_token %}
                       <button type="submit" class='btn btn-danger'>Borrar</button>
                   </form>
 
-                  <td>
-                  
+                </td>
+                {% endif %}
                 
 
                  

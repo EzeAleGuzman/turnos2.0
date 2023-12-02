@@ -26,163 +26,156 @@
 <body>
   <header>
     <div class="container-fluid">
-      <div class="container">
-        <div class="row">
-          <!-- 1ra columna del NAV (logo) -->
-          <div class="col-6">
-            <a class="logo-img" src="#">
-              <img src="../static/componentes/img/logo ajustado.png" alt="Logo hospital">
-            </a>
-          </div>
-          <!-- 2da columna del NAV (navegacion) -->
-          <div class="col-6">
-            <nav class="nav" id="nav">
-              <ul>
-                <li>
-                  <p>Bienvenido {{ user.username }}</p>
-                </li>
-                <li><a class="text-sm font-bold text-gray-400  hover:text-red-500" href="{% url 'salir' %}">Cerrar
-                    sesión</a></li>
-              </ul>
-            </nav>
-          </div>
+      <div class="container contheader">
+        <!-- columna 1 del header (LOGO) -->
+        <div class="cont_logo">
+          <a class="logo-img" src="#">
+            <img src="../static/componentes/img/logo ajustado.png" alt="Logo hospital">
+          </a>
+        </div>
+        <!-- columna 2 del header (BIENVENIDA) -->
+        <div class="cont_username">
+          <h3>Bienvenido {{ user.username }}</h3>
+        </div>
+        <!-- columna 3 del header (CERRAR SESIÓN) -->
+        <div class="cont_Cerrar">
+          <a href="{% url 'salir' %}">Cerrar sesión</a>
         </div>
       </div>
+    </div>
 
-      
+    <div class="dropdown-backdrop"></div>
+    <div class="titulo">
+      <a class="titulo-pag">
+        <h1>HOSPITAL D. ARTURO OÑATIVA</h1>
+      </a>
+    </div>
+    <!-- Imagen del hospital debajo del Header -->
 
-      <div class="dropdown-backdrop"></div>
-      <div class="titulo">
-        <a class="titulo-pag">
-          <h1>HOSPITAL D. ARTURO OÑATIVA</h1>
-        </a>
-      </div>
-      <!-- Imagen del hospital debajo del Header -->
-
-      <!-- Termina el header******************************************************************* -->
-      <main>
-        <div class="container contenedor">
-          <div class="row">
-            <!-- Columna 1 Titulo Sistema Gest Turnos -->
-            <div class="col-7">
-              <h2>Sistema de gestión de turnos</h2>
-            </div>
-            <!-- Columna 2 Saludo -->
-            <div class="col-3">
-              <!-- <td>
+    <!-- Termina el header******************************************************************* -->
+    <main>
+      <div class="container contenedor">
+        <div class="row">
+          <!-- Columna 1 Titulo Sistema Gest Turnos -->
+          <div class="col-7">
+            <h2>Sistema de gestión de turnos</h2>
+          </div>
+          <!-- Columna 2 Saludo -->
+          <div class="col-3">
+            <!-- <td>
             <p>Bienvenido {{ user.username }}</p>
           </td> -->
-            </div>
-            <!-- Columna 3 Botón y modal CREAR TURNO-->
-            <div class="col-2">
-              <!-- Modal crear turno -->
-              {% if pertenece_admin %}
-              <!-- Button trigger modal -->
-              <button type="button" class="btn btn-primary boton_CT" data-bs-toggle="modal"
-                data-bs-target="#exampleModal">
-                Crear turno
-              </button>
-              {% endif %}
-              <!-- Modal -->
-              <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
-                aria-hidden="true">
-                <div class="modal-dialog">
-                  <div class="modal-content">
-                    <div class="modal-header">
-                      <h1 class="modal-title fs-5" id="exampleModalLabel">Nuevo turno</h1>
-                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
+          </div>
+          <!-- Columna 3 Botón y modal CREAR TURNO-->
+          <div class="col-2">
+            <!-- Modal crear turno -->
+            {% if pertenece_admin %}
+            <!-- Button trigger modal -->
+            <button type="button" class="btn btn-primary boton_CT" data-bs-toggle="modal"
+              data-bs-target="#exampleModal">
+              Crear turno
+            </button>
+            {% endif %}
+            <!-- Modal -->
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+              aria-hidden="true">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Nuevo turno</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">
 
-                      <form action="{% url 'ver_turnos' %}" method='POST'>
-                        {% csrf_token %}
-                        {{ form|crispy}}
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                        <input class="btn btn-primary boton_CT" type='submit' value='Crear turno'>
-                      </form>
+                    <form action="{% url 'ver_turnos' %}" method='POST'>
+                      {% csrf_token %}
+                      {{ form|crispy}}
+                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                      <input class="btn btn-primary boton_CT" type='submit' value='Crear turno'>
+                    </form>
 
 
-                    </div>
-                    <div class="modal-footer">
-                    </div>
+                  </div>
+                  <div class="modal-footer">
                   </div>
                 </div>
               </div>
-
             </div>
 
           </div>
-
-
-
-
 
         </div>
 
 
 
-        <br><br>
-        <div class="container-fluid">
-          <div class="container">
-            <div class="table-responsive">
-              <table class="table align-middle mb-0 bg-white">
-                <thead class="bg-light">
-                  <tr>
-                    <th>Nombre y apellido</th>
-                    <th>DNI</th>
-                    <th>Médico</th>
-                    <th>Fecha</th>
-                    <th>Hora</th>
-                    {% if pertenece_admin %}
-                    <th>Acciones</th>
-                    {% endif %}
-                  </tr>
-                </thead>
-                {% for turno in turnos %}
-                <tbody>
-                  <tr>
-                    <td>
-                      <p> {{ turno.nombre|title }} {{ turno.apellido|title }}</p>
-                      <p> </p>
-                    </td>
-                    <td>
-                      <p> {{ turno.dni }}</p>
-                    </td>
-                    <td>
-                      <p> {{ turno.medico|title }}</p>
-                    </td>
-                    <td>
-                      <p>{{ turno.fecha }}</p>
-                    </td>
-                    <td>
-                      <p>{{ turno.hora }}</p>
-                    </td>
-                    {% if pertenece_admin %}
-                    <td class="d-flex">
-                      <a class='btn btn-warning' href="{% url 'editar_turno' turno.id %}">Editar</a>
 
-                      <form method="post" action="{% url 'borrar_turno' turno.id %}">
-                        {% csrf_token %}
-                        <button type="submit" class='btn btn-danger'>Borrar</button>
-                      </form>
 
-                    </td>
-                    {% endif %}
+      </div>
 
 
 
-                  </tr>
+      <br><br>
+      <div class="container-fluid">
+        <div class="container">
+          <div class="table-responsive">
+            <table class="table align-middle mb-0 bg-white">
+              <thead class="bg-light">
+                <tr>
+                  <th>Nombre y apellido</th>
+                  <th>DNI</th>
+                  <th>Médico</th>
+                  <th>Fecha</th>
+                  <th>Hora</th>
+                  {% if pertenece_admin %}
+                  <th class="acciones">Acciones</th>
+                  {% endif %}
+                </tr>
+              </thead>
+              {% for turno in turnos %}
+              <tbody>
+                <tr>
+                  <td>
+                    <p> {{ turno.nombre|title }} {{ turno.apellido|title }}</p>
+                    <p> </p>
+                  </td>
+                  <td>
+                    <p> {{ turno.dni }}</p>
+                  </td>
+                  <td>
+                    <p> {{ turno.medico|title }}</p>
+                  </td>
+                  <td>
+                    <p>{{ turno.fecha }}</p>
+                  </td>
+                  <td>
+                    <p>{{ turno.hora }}</p>
+                  </td>
+                  {% if pertenece_admin %}
+                  <td class="d-flex">
+                    <a class='btn btn-warning' href="{% url 'editar_turno' turno.id %}">Editar</a>
+
+                    <form method="post" action="{% url 'borrar_turno' turno.id %}">
+                      {% csrf_token %}
+                      <button type="submit" class='btn btn-danger'>Borrar</button>
+                    </form>
 
                   </td>
-                  </tr>
-                </tbody>
-                {% endfor %}
-              </table>
-            </div>
+                  {% endif %}
 
+
+
+                </tr>
+
+                </td>
+                </tr>
+              </tbody>
+              {% endfor %}
+            </table>
           </div>
 
-      </main>
+        </div>
+
+    </main>
 
     </div>
     <footer>
@@ -203,8 +196,6 @@
       })
     </script>
 
-    <!-- <script src="../static/componentes/header.js"></script> -->
-    <!-- <script src="../static/componentes/footer.js"></script> -->
     <script src="../static/js/script.js"></script>
     <script>
       // Captura el evento de apertura del modal

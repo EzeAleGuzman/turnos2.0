@@ -1,6 +1,6 @@
 
 .cont_form{
-    width: 40%;
+    width: 35%;
     margin: 0 auto;
     
 }
@@ -13,9 +13,7 @@
 }
 
 .cont_logo img{
-    width: 100%;
-    
-   
+    width: 100%;  
 }
 
 
@@ -23,4 +21,22 @@
 .cont_logo .logo_img{
     display: flex;
     margin: 0 auto;
+}
+
+h1 {
+    font-size: 1.9em;
+    color: #152C40;
+    font-family: 'Merriweather', serif;
+    font-weight: bold;
+    text-align: center;
+}
+
+.boton_InSesion{
+    width: 45%;    
+    margin: 0 auto;
+}
+
+.boton_InSesion .btn{
+    background-color: #03ADC6;
+    border-color: #03ADC6#03ADC6;
 }

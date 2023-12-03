@@ -4,6 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <!-- Enlace Bootstrap -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
@@ -13,49 +14,64 @@
   <!-- Enlace de google fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <!-- Enlace a CSS -->
-  <link rel="stylesheet" href="/static/componentes/css/turnos.css">
   <title>Oña 2.0 </title>
+  <!-- Enlace a CSS -->
+  <link rel="stylesheet" href="/turnos/static/componentes/css/login.css">
+
 </head>
 
 <body>
-  <div class="container flex justify-center items-center ">
-    <div class=" px-3">
-      
-    </div>
+  <!-- Logo -->
+  <div class="cont_logo">
+    <a href="#">
+      <img src="/turnos/static/componentes/img/logo ajustado.png" alt="Logo hospital">
+    </a>
   </div>
+  
   <hr class="px-10 m-4">
 
-  <div class='container flex justify-center items-center'>
+
+  <!-- Aca empieza el formulario de inicio de sesion -->
+  <div class="cont_form">
+    
     <form class="rounded-lg bg-white-500 p-5 shadow-lg shadow-zinc-500/50" action="" method="post">
       {% csrf_token %}
-      <div class="md:w-full px-3">
-        <a class= 'logo'>
-        <img src="/static/componentes/img/logo ajustado.png" alt="Logo hospital" class= 'logo-img'>
-      </a>
+
+      <!-- Iniciar sesion -->
+      <div class="In_sesion">
+        <h1>Iniciar sesión</h1>
+      </div>      
         <br>
-        <label class="form-label" for="username">
-          Usuario
-        </label>
-        <input class="form-control" type="text"
-          name="username" id="username" autocomplete="on">
-      </div>
-      <br />
-      <div class="md:w-full px-3">
+
+        <!-- Contenedor Credencial USUARIO -->
+        <div class="cont_usuario">
+          <label class="form-label" for="username">
+            Usuario
+          </label>
+          <input class="form-control" type="text" name="username" id="username" autocomplete="on">
+        </div>             
+      <br/>
+
+      <!-- Contenedor Credencial PASSWORD --> 
+      <div class="cont_password">
         <label class="form-label" for="password">
           Contraseña
         </label>
-        <input class="form-control" type="password"
-          name="password" id="password">
+        <input class="form-control" type="password" name="password" id="password">
       </div>
       <br>
-      <div class='container container-fluid'>
-      <button class="btn btn-primary boton_CT" type="submit"
-        type="submit">Iniciar sesion</button>
+
+      <!-- Contenedor Boton --> 
+      <div class='Boton_InSesion'>
+        <button class="btn btn-primary boton_CT" type="submit" type="submit">Iniciar sesion</button>
       </div>
+    </form>
+    <!-- </div> -->
   </div>
-  </form>
-  </div>
+
+
+
+
 </body>
 
 </html>

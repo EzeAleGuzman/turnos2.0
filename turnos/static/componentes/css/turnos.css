@@ -10,13 +10,11 @@
 body {
     margin-right: 10px;
     margin: 0%;
-    /*le agregué para que quede al borde y no se vean espacios en blanco en el footer. -Dani*/
     background-color: #f4eded;
     font-family: 'Merriweather', serif;
     align-items: center;
 }
 
-/* Estilos para la barra de navegación principal */
 h1,
 h2 {
     font-size: 1.7em;
@@ -47,7 +45,6 @@ a {
 }
 .cont_username{
     width: 70%;
-    /* padding-top: 1em; */
     padding-right: 1em;
     text-align: right;
     font-size: 1.3em;
@@ -74,17 +71,10 @@ a {
 .d-flex{
     justify-content: flex-end
 }
-.d-flex .btn{
-    
-}
 
 .acciones{
     text-align: right;
 }
-
-
-
-
 
 
 
@@ -109,7 +99,7 @@ a {
     transform: scaleX(1);
 }
 
-/* Agregado margin boton al enlace de intranet por algun motivo no quedaba alineado el subrayado animado */
+
 
 
 .titulo {
@@ -122,8 +112,7 @@ a {
     text-align: center;
     /* Centra el texto horizontalmente (opcional) */
     width: 100%;
-    background-color: #03ADC6;
-    border-radius: 15px 15px 0 0;
+    background-color: #03ADC6;    
     color: white;
     text-shadow: 0 0 10px #fff8;
 }
@@ -154,19 +143,7 @@ a {
     font-weight: bold;
 }
 
-.contenedor-imagenhospi {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    max-width: 100%;
-    margin-bottom: 1rem;
-}
 
-.imagenhospi {
-    max-width: 100%;
-    height: auto;
-}
 
 /******** ESTILOS DEL MAIN *******/
 

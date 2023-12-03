@@ -1,0 +1,26 @@
+
+.cont_form{
+    width: 40%;
+    margin: 0 auto;
+    
+}
+.cont_logo{
+    padding-top: 2em;
+    width: 20%;    
+    margin: 0 auto;
+    
+    
+}
+
+.cont_logo img{
+    width: 100%;
+    
+   
+}
+
+
+
+.cont_logo .logo_img{
+    display: flex;
+    margin: 0 auto;
+}

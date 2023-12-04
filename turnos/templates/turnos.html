@@ -1,55 +1,8 @@
+{% extends "base.html" %}
 {% load crispy_forms_tags %}
 
+{% block content  %}
 
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Medicos</title>
-  <!-- Enlace Bootstrap -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
-    crossorigin="anonymous"></script>
-  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-
-  <!-- Enlace de google fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <!-- Enlace a CSS -->
-  <link rel="stylesheet" href="/turnos/static/componentes/css/turnos.css">
-</head>
-
-<body>
-  <header>
-    <div class="container-fluid">
-      <div class="container contheader">
-        <!-- columna 1 del header (LOGO) -->
-        <div class="cont_logo">
-          <a class="logo-img" src="#">
-            <img src="/turnos/static/componentes/img/logo ajustado.png" alt="Logo hospital">
-          </a>
-        </div>
-        <!-- columna 2 del header (BIENVENIDA) -->
-        <div class="cont_username">
-          <h3>Bienvenido {{ user.username }}</h3>
-        </div>
-        <!-- columna 3 del header (CERRAR SESIÓN) -->
-        <div class="cont_Cerrar">
-          <a href="{% url 'salir' %}">Cerrar sesión</a>
-        </div>
-      </div>
-    </div>
-
-    
-    <div class="titulo">
-      <a class="titulo-pag">
-        <h1>HOSPITAL D. ARTURO OÑATIVA</h1>
-      </a>
-    </div>
     <!-- Termina el header******************************************************************* -->
     <main>
       <div class="container contenedor">
@@ -88,7 +41,7 @@
                     <form action="{% url 'ver_turnos' %}" method='POST'>
                       {% csrf_token %}
                       {{ form|crispy}}
-                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
                       <input class="btn btn-primary boton_CT" type='submit' value='Crear turno'>
                     </form>
 
@@ -181,44 +134,7 @@
     </footer>
 
 
+    {% endblock  %}
 
 
 
-
-    <script>
-      const myModal = document.getElementById('myModal')
-      const myInput = document.getElementById('myInput')
-
-      myModal.addEventListener('shown.bs.modal', () => {
-        myInput.focus()
-      })
-    </script>
-
-    <script src="../static/js/script.js"></script>
-    <script>
-      // Captura el evento de apertura del modal
-      $('#editarModal{{ turno.id }}').on('show.bs.modal', function (event) {
-        var button = $(event.relatedTarget); // Botón que activó el modal
-        var turnoId = button.data('turno-id');
-        var turnoNombre = button.data('turno-nombre');
-        var turnoApellido = button.data('turno-apellido');
-        var turnoDni = button.data('turno-dni');
-        var turnoMedico = button.data('turno-medico');
-        var turnoHorario = button.data('turno-horario');
-
-        // Actualiza los campos del formulario en el modal
-        var modal = $(this);
-        modal.find('[name="nombre"]').val(turnoNombre);
-        modal.find('[name="apellido"]').val(turnoApellido);
-        modal.find('[name="dni"]').val(turnoDni);
-        modal.find('[name="medico"]').val(turnoMedico);
-        modal.find('[name="horario"]').val(turnoHorario);
-      });
-    </script>
-
-
-
-</body>
-
-
-</html>

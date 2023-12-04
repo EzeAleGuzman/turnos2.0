@@ -1,3 +1,13 @@
-pruebaHeaderfooter
-.sqlite3
-.pyc
+
+# Django
+*.log
+*.pot
+*.pyc
+__pycache__/
+local_settings.py
+
+# Database
+db.sqlite3
+
+# Database
+db.sqlite3

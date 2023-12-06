@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<br>
+<div class="container-fluid">
+    <div class="container">
+        <span class="badge bg-primary"><a href="{% url 'ver_turnos' %}">Inicio</a></span> </option>
+        <span class="badge bg-success fs-6"> <a href="{% url 'pacientes_atendidos' %}" >Pacientes Atendidos</a></span>
+        <span class="badge bg-danger"><a href="{% url 'pacientes_ausentes' %}" >Pacientes Ausentes</a></span>
+    </div>
+</div>
+
+<br><br>
+<div class="container-fluid">
+    <div>
+        <div class="table-responsive">
+            <table class="table align-middle mb-0 bg-white">
+                <thead class="bg-light">
+                    <tr>
+                        <th>Nombre y Apellido</th>
+                        <th>DNI</th>
+                        <th>Médico</th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for turno in turnos_atendidos %}
+                    <tr>
+                        <td>{{ turno.nombre|title }} {{ turno.apellido|title }}</td>
+                        <td>{{ turno.dni }}</td>
+                        <td>{{ turno.medico|title }}</td>
+
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+</div>
+
+
+{% endblock %}

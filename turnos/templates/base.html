@@ -14,6 +14,9 @@
     integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
     crossorigin="anonymous"></script>
   <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr@4.6.6/dist/flatpickr.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/flatpickr@4.6.6/dist/flatpickr.min.js"></script>
+
 
   <!-- Enlace de google fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -47,21 +50,75 @@
       </div>
     </div>
     <div class="container-fluid">
+      
     <div class="titulo">
-        <a class="titulo-pag">
+      <div class="container"> <a class="titulo-pag">
             <h2>SISTEMA DE GESTIÓN DE TURNOS</h2>
         </a>
       </div>
+      </div>
+    
       </div>
     {% block content %}
 
     {% endblock %}
 
 
-      <!--<script src="../static/js/script.js"></script>-->
+      
 
 
-
+    <script>
+      flatpickr(".datepicker", {
+          dateFormat: "d/m/Y",
+          altInput: true,
+          altFormat: "d/m/Y",
+          locale: {
+              firstDayOfWeek: 1,
+              weekdays: {
+                  shorthand: ["Dom", "Lun", "Mar", "Mié", "Jue", "Vie", "Sáb"],
+                  longhand: [
+                      "Domingo",
+                      "Lunes",
+                      "Martes",
+                      "Miércoles",
+                      "Jueves",
+                      "Viernes",
+                      "Sábado",
+                  ],
+              },
+              months: {
+                  shorthand: [
+                      "Ene",
+                      "Feb",
+                      "Mar",
+                      "Abr",
+                      "May",
+                      "Jun",
+                      "Jul",
+                      "Ago",
+                      "Sep",
+                      "Oct",
+                      "Nov",
+                      "Dic",
+                  ],
+                  longhand: [
+                      "Enero",
+                      "Febrero",
+                      "Marzo",
+                      "Abril",
+                      "Mayo",
+                      "Junio",
+                      "Julio",
+                      "Agosto",
+                      "Septiembre",
+                      "Octubre",
+                      "Noviembre",
+                      "Diciembre",
+                  ],
+              },
+          },
+      });
+  </script>
   </body>
 
 

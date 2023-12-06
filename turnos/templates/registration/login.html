@@ -1,9 +1,12 @@
-<html lang="en">
-<!DOCTYPE html>
+{% load static %}
 
+
+<!DOCTYPE html>
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 
   <!-- Enlace Bootstrap -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -16,7 +19,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <title>Oña 2.0 </title>
   <!-- Enlace a CSS -->
-  <link rel="stylesheet" href="/turnos/static/componentes/css/login.css">
+  <link rel="stylesheet" href="{% static 'componentes/css/login.css' %}">
 
 </head>
 
@@ -24,7 +27,7 @@
   <!-- Logo -->
   <div class="cont_logo">
     <a href="#">
-      <img src="/turnos/static/componentes/img/logo ajustado.png" alt="Logo hospital">
+      <img class='logo_img'src="{% static 'componentes/img/logo ajustado.png' %}" alt="Logo hospital">
     </a>
   </div>
   
@@ -48,16 +51,18 @@
           <label class="form-label" for="username">
             Usuario
           </label>
-          <input class="form-control" type="text" name="username" id="username" autocomplete="on">
-        </div>             
-      <br/>
-
+          <div class="col-sm-12">
+            <input class="form-control" type="text" name="username" id="username" autocomplete="on">
+          </div>
+        </div>
       <!-- Contenedor Credencial PASSWORD --> 
       <div class="cont_password">
         <label class="form-label" for="password">
           Contraseña
         </label>
+        <div class="col-sm-12">
         <input class="form-control" type="password" name="password" id="password">
+        </div>
       </div>
       <br>
 

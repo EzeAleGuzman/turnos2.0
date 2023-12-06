@@ -47,5 +47,3 @@ $('#editarModal{{ turno.id }}').on('show.bs.modal', function (event) {
     modal.find('[name="medico"]').val(turnoMedico);
     modal.find('[name="horario"]').val(turnoHorario);
 });
-
-

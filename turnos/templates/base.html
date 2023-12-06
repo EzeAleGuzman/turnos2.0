@@ -1,3 +1,5 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -17,7 +19,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <!-- Enlace a CSS -->
-  <link rel="stylesheet" href="/turnos/static/componentes/css/turnos.css">
+  <link rel="stylesheet" href="{% static 'componentes/css/turnos.css' %}">
+  
 </head>
 
 <body>
@@ -27,44 +30,39 @@
         <!-- columna 1 del header (LOGO) -->
         <div class="cont_logo">
           <a class="logo-img" src="#">
-            <img src="/turnos/static/componentes/img/logo ajustado.png" alt="Logo hospital">
-          </a>
+            <img src="{% static 'componentes/img/logo ajustado.png' %}" alt="Logo hospital">
+            </a>
         </div>
         <!-- columna 2 del header (BIENVENIDA) -->
         <div class="cont_username">
-          <h3>Bienvenido {{ user.username }}</h3>
+          <h3>Hola {{ user.username }}</h3>
         </div>
         <!-- columna 3 del header (CERRAR SESIÓN) -->
         <div class="cont_Cerrar">
-          <a href="{% url 'salir' %}">Cerrar sesión</a>
+          <a href="{% url 'salir' %}"class="btn btn-outline-danger"> <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-right" viewBox="0 0 16 16">
+  <path fill-rule="evenodd" d="M10 12.5a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v2a.5.5 0 0 0 1 0v-2A1.5 1.5 0 0 0 9.5 2h-8A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-2a.5.5 0 0 0-1 0z"/>
+  <path fill-rule="evenodd" d="M15.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L14.293 7.5H5.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3z"/>
+</svg></a>
         </div>
       </div>
     </div>
+    <div class="container-fluid">
     <div class="titulo">
         <a class="titulo-pag">
-          <h1>HOSPITAL D. ARTURO OÑATIVA</h1>
+            <h2>SISTEMA DE GESTIÓN DE TURNOS</h2>
         </a>
+      </div>
       </div>
     {% block content %}
 
     {% endblock %}
-    <script>
-        const myModal = document.getElementById('myModal')
-        const myInput = document.getElementById('myInput')
-  
-        myModal.addEventListener('shown.bs.modal', () => {
-          myInput.focus()
-        })
-      </script>
-  
-      <script src="../static/js/script.js"></script>
-      <script>
-     
-      </script>
-  
-  
-  
+
+
+      <!--<script src="../static/js/script.js"></script>-->
+
+
+
   </body>
-  
-  
+
+
   </html>
